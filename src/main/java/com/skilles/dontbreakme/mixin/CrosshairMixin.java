@@ -2,6 +2,7 @@ package com.skilles.dontbreakme.mixin;
 
 import com.skilles.dontbreakme.Dontbreakme;
 import com.skilles.dontbreakme.config.ConfigManager;
+import com.skilles.dontbreakme.config.ConfigPojo;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -40,7 +41,7 @@ public abstract class CrosshairMixin extends DrawableHelper {
     @Unique
     private static boolean shouldMask() {
         MinecraftClient client = MinecraftClient.getInstance();
-        if (!client.player.isCreative() && !Dontbreakme.bypass) {
+        if ((!client.player.isCreative() || ConfigPojo.generalGroup.creative) && !Dontbreakme.bypass) {
             if (client.crosshairTarget != null && client.crosshairTarget.getType() == net.minecraft.util.hit.HitResult.Type.BLOCK) {
                 BlockHitResult blockHitResult = (BlockHitResult) client.crosshairTarget;
                 BlockPos blockPos = blockHitResult.getBlockPos();
