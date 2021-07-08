@@ -16,8 +16,10 @@ public class ConfigPojo {
         @Setting(comment = "Global enable")
         public boolean globalEnable = true;
         @Setting(comment = "Inverse mode")
-        public boolean inverse = false;
+        public boolean mode = false;
+        @Setting(comment = "Blocks to Allow")
+        public List<String> whitelist = new ArrayList<>();
         @Setting(comment = "Blocks to Ignore")
-        public List<String> blocks = new ArrayList<>();
+        public List<String> blacklist = new ArrayList<>();
     }
 }

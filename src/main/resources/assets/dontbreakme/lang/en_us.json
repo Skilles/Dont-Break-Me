@@ -1,11 +1,14 @@
 {
   "config.dontbreakme.title": "Don't Break Me Configuration",
   "config.dontbreakme.category.general": "General",
-  "config.dontbreakme.general.inverse": "Whitelist",
-  "config.dontbreakme.general.inverse.tooltip": "When enabled, the blocks in the list will be the only blocks you can mine",
+  "config.dontbreakme.general.mode": "Mode",
+  "config.dontbreakme.general.mode.tooltip": "Whitelist blocks to only allow mining those blocks or blacklist blocks to prevent mining those blocks",
   "config.dontbreakme.general.globalenable": "Enabled",
   "config.dontbreakme.general.globalenable.tooltip": "Enables or disables the mod",
-  "config.dontbreakme.general.list": "Block List",
+  "config.dontbreakme.general.whitelist": "Whitelist",
+  "config.dontbreakme.general.blacklist": "Blacklist",
+  "config.dontbreakme.general.whitelist.tooltip": "Blocks not in this list cannot be mined",
+  "config.dontbreakme.general.blacklist.tooltip": "Blocks in this list cannot be mined",
   "config.dontbreakme.general.list.caption": "Add the name of the blocks in your language. You can also use fragments of block names such as 'Ore' to do all ores.",
   "key.dontbreakme.bypasskey": "Bypass",
   "category.dontbreakme.keybinds" : "Don't Break Me"

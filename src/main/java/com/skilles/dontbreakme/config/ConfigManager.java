@@ -5,8 +5,14 @@ import java.util.List;
 
 public class ConfigManager {
     public static boolean containsBlock(String blockName) {
-        List<String> blockList = new ArrayList<>(ConfigPojo.generalGroup.blocks);
         if (!ConfigPojo.generalGroup.globalEnable) return false;
+
+        List<String> blockList;
+        if (ConfigPojo.generalGroup.mode) { // Whitelist
+            blockList = new ArrayList<>(ConfigPojo.generalGroup.whitelist);
+        } else {
+            blockList = new ArrayList<>(ConfigPojo.generalGroup.blacklist);
+        }
 
         // Set both list and blockname to lower case for comparison
         String lBlockName = blockName.toLowerCase();
@@ -16,7 +22,7 @@ public class ConfigManager {
         }
 
         // If inverse is true, if the block is found then allow block breaking
-        if (blockList.stream().anyMatch(lBlockName::contains)) return !ConfigPojo.generalGroup.inverse;
+        if (blockList.stream().anyMatch(lBlockName::contains)) return !ConfigPojo.generalGroup.mode;
         
         /*for(String block : blockList) {
             if (blockName.contains(block)){
@@ -25,7 +31,7 @@ public class ConfigManager {
         }*/
         
         // If the block is not found, deny breaking
-        return ConfigPojo.generalGroup.inverse;
+        return ConfigPojo.generalGroup.mode;
     }
 
 }
