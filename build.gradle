@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.9-SNAPSHOT'
+    id 'fabric-loom' version '0.8-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -20,7 +20,7 @@ repositories {
         url = "https://maven.shedaniel.me/"
     }
     maven {
-        url = "https://api.modrinth.com/maven/"
+        url = "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases/"
     }
 }
 
@@ -44,15 +44,15 @@ dependencies {
     annotationProcessor "net.fabricmc:fabric-mixin-compile-extensions:0.4.3"
 
     // modmenu integration
-    modImplementation "maven.modrinth:modmenu:${project.modmenu_version}"
+    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
-    modImplementation "com.ptsmods:devlogin:1.0.0"
+    modImplementation "com.ptsmods:devlogin:1.2"
 
     include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
     include "me.zeroeightsix:fiber:${project.fiber_version}"
-    include "maven.modrinth:modmenu:${project.modmenu_version}"
+    include "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {

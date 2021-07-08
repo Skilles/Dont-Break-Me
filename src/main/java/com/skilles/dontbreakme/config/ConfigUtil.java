@@ -6,8 +6,8 @@ import net.minecraft.text.TranslatableText;
 
 public class ConfigUtil {
     public static BooleanToggleBuilder getBooleanEntry(String name, boolean bool, boolean defaultValue, ConfigEntryBuilder entryBuilder) {
-        return entryBuilder.startBooleanToggle(new TranslatableText("config.dontbreakme.mode."+name), bool)
+        return entryBuilder.startBooleanToggle(new TranslatableText("config.dontbreakme.general."+name), bool)
                 .setDefaultValue(defaultValue)
-                .setTooltip(new TranslatableText("config.dontbreakme.mode."+name+".tooltip"));
+                .setTooltip(new TranslatableText("config.dontbreakme.general."+name+".tooltip"));
     }
 }

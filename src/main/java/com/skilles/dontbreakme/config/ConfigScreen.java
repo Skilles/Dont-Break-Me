@@ -14,7 +14,7 @@ public class ConfigScreen {
     public static Screen getConfigScreen(Screen parentScreen) {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parentScreen)
-                .setDefaultBackgroundTexture(new Identifier("minecraft:textures/block/bee_nest_side.png"))
+                .setDefaultBackgroundTexture(new Identifier("minecraft:textures/block/item_frame.png"))
                 .setTitle(new TranslatableText("config.dontbreakme.title"));
 
         builder.setGlobalized(true);
@@ -25,6 +25,9 @@ public class ConfigScreen {
         ConfigCategory general = builder.getOrCreateCategory(new TranslatableText("config.dontbreakme.category.general"));
         general.addEntry(getBooleanEntry("globalenable", generalGroup.globalEnable, true, entryBuilder)
                 .setSaveConsumer((value) -> { generalGroup.globalEnable = value; })
+                .build());
+        general.addEntry(getBooleanEntry("inverse", generalGroup.inverse, false, entryBuilder)
+                .setSaveConsumer((value) -> { generalGroup.inverse = value; })
                 .build());
         general.addEntry(entryBuilder.startTextDescription(new TranslatableText("config.dontbreakme.general.list.caption")).build());
         general.addEntry(entryBuilder.startStrList(new TranslatableText("config.dontbreakme.general.list"), generalGroup.blocks).build());
