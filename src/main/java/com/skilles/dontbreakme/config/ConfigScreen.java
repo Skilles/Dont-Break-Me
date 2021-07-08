@@ -41,6 +41,9 @@ public class ConfigScreen {
                     return new LiteralText(string);
                 })
                 .build());
+        general.addEntry(getBooleanEntry("creative", generalGroup.creative, true, entryBuilder)
+                .setSaveConsumer((value) -> { generalGroup.creative = value; })
+                .build());
         general.addEntry(entryBuilder.startTextDescription(new TranslatableText("config.dontbreakme.general.list.caption")).build());
         general.addEntry(entryBuilder.startStrList(new TranslatableText("config.dontbreakme.general.whitelist"), generalGroup.whitelist)
                 .setTooltip(new TranslatableText("config.dontbreakme.general.whitelist.tooltip"))

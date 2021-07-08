@@ -3,6 +3,8 @@
   "config.dontbreakme.category.general": "General",
   "config.dontbreakme.general.mode": "Mode",
   "config.dontbreakme.general.mode.tooltip": "Whitelist blocks to only allow mining those blocks or blacklist blocks to prevent mining those blocks",
+  "config.dontbreakme.general.creative": "Creative",
+  "config.dontbreakme.general.creative.tooltip": "If enabled, mod will work in creative mode",
   "config.dontbreakme.general.globalenable": "Enabled",
   "config.dontbreakme.general.globalenable.tooltip": "Enables or disables the mod",
   "config.dontbreakme.general.whitelist": "Whitelist",

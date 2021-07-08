@@ -36,7 +36,7 @@ public class Dontbreakme implements ClientModInitializer {
         // Prevent break if block is on the config
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
             if (ConfigManager.containsBlock(world.getBlockState(pos).getBlock().getName().getString())
-            && !player.isCreative() && !bypass) {
+            && (!player.isCreative() || ConfigPojo.generalGroup.creative) && !bypass) {
                 return ActionResult.FAIL;
             } else {
                 return ActionResult.PASS;

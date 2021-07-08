@@ -15,8 +15,10 @@ public class ConfigPojo {
     public static class GeneralGroup {
         @Setting(comment = "Global enable")
         public boolean globalEnable = true;
-        @Setting(comment = "Inverse mode")
+        @Setting(comment = "True = whitelist | False = blacklist")
         public boolean mode = false;
+        @Setting(comment = "Global enable")
+        public boolean creative = true;
         @Setting(comment = "Blocks to Allow")
         public List<String> whitelist = new ArrayList<>();
         @Setting(comment = "Blocks to Ignore")
