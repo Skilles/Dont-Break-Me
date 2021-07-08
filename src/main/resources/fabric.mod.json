@@ -2,13 +2,14 @@
   "schemaVersion": 1,
   "id": "dontbreakme",
   "version": "${version}",
-  "name": "Don't Break Me",
+  "name": "Don't Mine Me",
   "description": "Prevent's breaking certain blocks!",
   "authors": [
     "Skilles"
   ],
   "contact": {
-    "repo": "github.com/skilles/dont-break-me"
+    "repo": "github.com/skilles/dont-break-me",
+    "website": "github.com/skilles/dont-break-me"
   },
   "license": "GPL-3.0",
   "icon": "assets/dontbreakme/icon.png",
